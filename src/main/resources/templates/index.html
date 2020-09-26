@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="stylesheet" type="text/css"
-	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 <title>Home | Status Posting</title>
 </head>
@@ -26,6 +26,7 @@
 			<div id="navbar" class="collapse navbar-collapse pull-right">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/login}">Login</a></li>
+					<li><a th:href="@{/registration}">Registration</a></li>
 				</ul>
 			</div>
 		</div>
@@ -39,16 +40,19 @@
 			<table class="table table-bordered table-hover">
 				<thead>
 					<tr>
-						<th>Status By</th>
-						<th>Status</th>
-						<th>Location</th>
+						<th><i class="fas fa-users"></i> Status By</th>
+						<th><i class="fas fa-edit"></i> Status</th>
+						<th><i class="fas fa-map-marked-alt"></i> Location</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
+					<tr th:each="st,iter : ${statusList}">
+						<td th:text="${st.createdBy.firstName + ' ' + st.createdBy.lastName}">Status By</td>
+						<td th:text="${st.status}">Status</td>
+						<td th:text="${st.location.location}">Location</td>
+					</tr>
+					<tr th:if="${#lists.isEmpty(statusList)}">
+						<td colspan="4" class="text-center">No data available</td>
 					</tr>
 				</tbody>
 			</table>
