@@ -36,46 +36,46 @@
 			<div class="col-md-6 col-md-offset-3">
 			<h1>Status Information</h1>
 				<form th:action="@{/statuspost/form}" th:object="${userStatus}" method="post">
-						<div class="form-group" th:classappend="${#fields.hasErrors('status')}? 'has-error':''">
-							<label for="status" class="control-label">Status<span class="text-danger"> *</span></label> 
-							<textarea id="status" class="form-control" th:field="*{status}" required></textarea>
-							<p class="error-message" th:each="error: ${#fields.errors('status')}" th:text="${error}">Validation error</p>
-						</div>
-						
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group" th:classappend="${#fields.hasErrors('isPublic')}? 'has-error':''">
-									<label for="isPublic" class="control-label">Choose Policy<span class="text-danger"> *</span></label><br>
-									<label> 
-										<input type="radio" th:field="*{isPublic}" th:value="1"> Public
-									</label>
-									<label> 
-										<input type="radio" th:field="*{isPublic}" th:value="0"> Private 
-									</label>
-									<p class="error-message" th:each="error: ${#fields.errors('isPublic')}" th:text="${error}">Validation error</p>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group" th:classappend="${#fields.hasErrors('isPinStatus')}? 'has-error':''">
-									<label> 
-										<input type="checkbox" th:field="*{isPinStatus}" th:value="1"> Is Pin Status?
-									</label>
-									<p class="error-message" th:each="error: ${#fields.errors('isPinStatus')}" th:text="${error}">Validation error</p>
-								</div>
+					<div class="form-group" th:classappend="${#fields.hasErrors('status')}? 'has-error':''">
+						<label for="status" class="control-label">Status<span class="text-danger"> *</span></label> 
+						<textarea id="status" class="form-control" th:field="*{status}" required></textarea>
+						<p class="error-message" th:each="error: ${#fields.errors('status')}" th:text="${error}">Validation error</p>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group" th:classappend="${#fields.hasErrors('isPublic')}? 'has-error':''">
+								<label for="isPublic" class="control-label">Choose Policy<span class="text-danger"> *</span></label><br>
+								<label> 
+									<input type="radio" th:field="*{isPublic}" th:value="1"> Public
+								</label>
+								<label> 
+									<input type="radio" th:field="*{isPublic}" th:value="0"> Private 
+								</label>
+								<p class="error-message" th:each="error: ${#fields.errors('isPublic')}" th:text="${error}">Validation error</p>
 							</div>
 						</div>
-						
-						<div class="form-group" th:classappend="${#fields.hasErrors('location')}? 'has-error':''">
-							<label for="location" class="control-label">Location<span class="text-danger"> *</span></label> 
-							<select class="selectpicker form-control" data-live-search="true" data-size="10" title="Please Select ..." th:field="*{location}" required>
-								<option value="">Please Select ...</option>
-								<option th:each="item : ${locations}" th:value="${item.id}" th:text="${item.location}" >Select Location</option>
-							</select>
-							<p class="error-message" th:each="error: ${#fields.errors('location')}" th:text="${error}">Validation error</p>
+						<div class="col-md-6">
+							<div class="form-group" th:classappend="${#fields.hasErrors('isPinStatus')}? 'has-error':''">
+								<label> 
+									<input type="checkbox" th:field="*{isPinStatus}" th:value="1"> Is Pin Status?
+								</label>
+								<p class="error-message" th:each="error: ${#fields.errors('isPinStatus')}" th:text="${error}">Validation error</p>
+							</div>
 						</div>
-						
-						<button type="submit" class="btn btn-primary pull-right">Post Status</button>	
-									
+					</div>
+					
+					<div class="form-group" th:classappend="${#fields.hasErrors('location')}? 'has-error':''">
+						<label for="location" class="control-label">Location<span class="text-danger"> *</span></label> 
+						<select class="selectpicker form-control" data-live-search="true" data-size="10" title="Please Select ..." th:field="*{location}" required>
+							<option value="">Please Select ...</option>
+							<option th:each="item : ${locations}" th:value="${item.id}" th:text="${item.location}" >Select Location</option>
+						</select>
+						<p class="error-message" th:each="error: ${#fields.errors('location')}" th:text="${error}">Validation error</p>
+					</div>
+					<input type="hidden" id="id" name="id" th:field="*{id}" />
+					
+					<button type="submit" class="btn btn-primary pull-right">Post Status</button>	
 				</form>
 			</div>
 		</div>
