@@ -23,8 +23,7 @@ cd status-posting
 ### Configuration
 You have to provide the following settings:
 ```
-MySQL Database Configuration
-```properties
+#MySQL Database Configuration
 spring.datasource.url=jdbc:mysql://localhost:3306/<database_name>
 spring.datasource.username=<DB_USERNAME>
 spring.datasource.password=<DB_PASSWORD>
