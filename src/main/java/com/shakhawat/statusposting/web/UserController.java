@@ -1,6 +1,7 @@
 package com.shakhawat.statusposting.web;
 
 import com.shakhawat.statusposting.model.User;
+import com.shakhawat.statusposting.repository.UserStatusRepository;
 import com.shakhawat.statusposting.service.SecurityService;
 import com.shakhawat.statusposting.service.UserService;
 import com.shakhawat.statusposting.validator.UserValidator;
@@ -20,6 +21,9 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
+    
+	@Autowired
+	UserStatusRepository statusRepository;
     
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -66,6 +70,7 @@ public class UserController {
 
     @GetMapping({"/dashboard"})
     public String welcome(Model model) {
+    	model.addAttribute("statusList", statusRepository.findAll());
         return "dashboard";
     }
 
