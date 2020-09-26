@@ -47,3 +47,12 @@ insert  into `role`(`id`,`name`) values (1,'ROLE_USER'),(2,'ROLE_STATUS');
 ### Test Status-Posting Web Application
 1. Browse the following path `http://localhost:8080`
 
+### Snapshot of output
+- https://i.ibb.co/NYgQrgs/ER-of-Status-Posting.png
+- https://i.ibb.co/MNFpKZM/Home-Page.png
+- https://i.ibb.co/bsGQC9C/Login-Page.png
+- https://i.ibb.co/6DQHDBB/Reg-Page.png
+- https://i.ibb.co/TPbmmnv/Reg-Validation.png
+- https://i.ibb.co/JtP47cx/Status-Entry-Form.png
+- https://i.ibb.co/0sDGcYn/Status-Entry-Validation.png
+- https://i.ibb.co/nzGsKDF/User-wise-Status-List.png
