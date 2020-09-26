@@ -8,6 +8,8 @@
 
 <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 <title>Status Posting</title>
 </head>
 <body>
@@ -44,7 +46,7 @@
 			    </div>
 			    
 				<a href="#" class="btn btn-primary pull-right" style="margin-bottom: 5px;" th:href="@{/statuspost/form}" title="Add New Page">
-					Add New Status
+					<span class="fas fa-plus"></span> Add New Status
 				</a>
 			</div>
 		</div>
@@ -63,12 +65,12 @@
 					<tr th:each="st,iter : ${statusList}">
 						<td>
 							<a href="#" class="btn btn-sm btn-default btn-edit" th:href="@{/statuspost/form(id=${st.id})}" title="Edit Status">
-								<span class="fa fa-edit text-success"></span> Edit
+								<span class="fas fa-edit"></span> Edit
 							</a>
 						</td>
-						<td th:text="${st.createdBy.firstName + ' ' + st.createdBy.lastName}" class="text-center">Status By</td>
+						<td th:text="${st.createdBy.firstName + ' ' + st.createdBy.lastName}">Status By</td>
 						<td th:text="${st.status}">Status</td>
-						<td th:text="${st.location.location}" class="text-right">Location</td>
+						<td th:text="${st.location.location}">Location</td>
 					</tr>
 					<tr th:if="${#lists.isEmpty(statusList)}">
 						<td colspan="4" class="text-center">No data available</td>
