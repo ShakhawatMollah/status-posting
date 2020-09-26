@@ -47,12 +47,3 @@ insert  into `role`(`id`,`name`) values (1,'ROLE_USER'),(2,'ROLE_STATUS');
 ### Test Status-Posting Web Application
 1. Browse the following path `http://localhost:8080`
 
-### Snapshot of output
-<a href="https://ibb.co/kcVkJVx" target="_blank"><img src="https://i.ibb.co/kcVkJVx/ER-of-Status-Posting.png" alt="ER-of-Status-Posting" border="0"></a> 
-<a href="https://ibb.co/mzftdb6" target="_blank"><img src="https://i.ibb.co/mzftdb6/Home-Page.png" alt="Home-Page" border="0"></a> 
-<a href="https://ibb.co/n7K6YJY" target="_blank"><img src="https://i.ibb.co/n7K6YJY/Login-Page.png" alt="Login-Page" border="0"></a> 
-<a href="https://ibb.co/GCmWCTT" target="_blank"><img src="https://i.ibb.co/GCmWCTT/Reg-Page.png" alt="Reg-Page" border="0"></a> 
-<a href="https://ibb.co/Dw8556V" target="_blank"><img src="https://i.ibb.co/Dw8556V/Reg-Validation.png" alt="Reg-Validation" border="0"></a> 
-<a href="https://ibb.co/1Qx5q0s" target="_blank"><img src="https://i.ibb.co/1Qx5q0s/Status-Entry-Form.png" alt="Status-Entry-Form" border="0"></a> 
-<a href="https://ibb.co/xFC7Dz2" target="_blank"><img src="https://i.ibb.co/xFC7Dz2/Status-Entry-Validation.png" alt="Status-Entry-Validation" border="0"></a> 
-<a href="https://ibb.co/gz2McDx" target="_blank"><img src="https://i.ibb.co/gz2McDx/User-wise-Status-List.png" alt="User-wise-Status-List" border="0"></a>
