@@ -12,6 +12,7 @@ A Project for Post a Status by checking in Location
 * Git
 * JDK 8 or later
 * Maven 3.0 or later
+* MySQL 5.7 or later
 
 ### Clone
 To get started you can simply clone this repository using git:
