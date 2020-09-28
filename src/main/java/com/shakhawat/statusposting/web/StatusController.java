@@ -1,6 +1,7 @@
 package com.shakhawat.statusposting.web;
 
 import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -58,22 +59,35 @@ public class StatusController {
 		userStatusValidator.validate(userStatus, bindingResult);
 		
 		if (bindingResult.hasErrors()) {
+			m.addAttribute("userStatus", userStatus);
+			m.addAttribute("locations", locationRepository.findAll());
 			return "statusPosting/form";
 		}
 		
+		/* Basic audit - Start */
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetail = (UserDetails) auth.getPrincipal();
         
+        User user = null;
         if(!StringUtils.isEmpty(userDetail.getUsername())) {
             User u = userService.findByUsername(userDetail.getUsername());
     		if(!StringUtils.isEmpty(u)) {
-    			User user = new User();
+    			user = new User();
     			user.setId(u.getId());
-    			userStatus.setCreatedBy(user);
     		}
         }
 
-		userStatus.setCreatedAt(new Date());
+		if(StringUtils.isEmpty(userStatus.getId())) {
+			userStatus.setCreatedAt(new Date());
+			userStatus.setCreatedBy(user);
+		} else {
+			Optional<UserStatus> rs = statusRepository.findById(userStatus.getId());
+			userStatus.setCreatedAt(rs.get().getCreatedAt());
+			userStatus.setCreatedBy(rs.get().getCreatedBy());
+			userStatus.setUpdatedAt(new Date());
+			userStatus.setUpdatedBy(user);
+		}
+		/* Basic audit - End */
 		
 		statusRepository.save(userStatus);
 		
