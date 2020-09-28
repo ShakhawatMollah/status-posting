@@ -50,7 +50,7 @@ insert  into `role`(`id`,`name`) values (1,'ROLE_USER'),(2,'ROLE_STATUS');
 
 ### Snapshot of output
 - https://i.ibb.co/NYgQrgs/ER-of-Status-Posting.png
-- https://i.ibb.co/MNFpKZM/Home-Page.png
+- https://i.ibb.co/3vYqXV1/Home-Page.png
 - https://i.ibb.co/bsGQC9C/Login-Page.png
 - https://i.ibb.co/6DQHDBB/Reg-Page.png
 - https://i.ibb.co/TPbmmnv/Reg-Validation.png
