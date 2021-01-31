@@ -38,13 +38,6 @@ You can run the application from the command line using:
 mvn clean spring-boot:run
 ```
 
-### Migration
-Insert the following Schemas:
-```
-insert  into `location`(`id`,`location`) values (1,'Sylhet'),(2,'Bandarban'),(3,'Khulna');
-insert  into `role`(`id`,`name`) values (1,'ROLE_USER'),(2,'ROLE_STATUS');
-```
-
 ### Test Status-Posting Web Application
 1. Browse the following path `http://localhost:8080`
 
