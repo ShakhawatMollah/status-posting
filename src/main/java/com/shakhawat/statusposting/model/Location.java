@@ -18,6 +18,14 @@ public class Location {
     
     @NotNull
     private String location;
+    
+	public Location() {
+	}
+
+	public Location(Long id, String location) {
+		this.id = id;
+		this.location = location;
+	}
 
 	public Long getId() {
 		return id;
