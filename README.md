@@ -17,7 +17,7 @@ A Project for Post a Status by checking in Location
 ### Clone
 To get started you can simply clone this repository using git:
 ```
-git clone https://github.com/shakhawatm/status-posting.git
+git clone https://github.com/ShakhawatMollah/status-posting.git
 cd status-posting
 ```
 
@@ -25,7 +25,7 @@ cd status-posting
 You have to provide the following settings:
 ```
 #MySQL Database Configuration
-spring.datasource.url=jdbc:mysql://localhost:3306/<database_name>
+spring.datasource.url=jdbc:mysql://localhost:3306/<DATABASE_NAME>
 spring.datasource.username=<DB_USERNAME>
 spring.datasource.password=<DB_PASSWORD>
 ```
@@ -38,7 +38,7 @@ You can run the application from the command line using:
 mvn clean spring-boot:run
 ```
 
-### Test Status-Posting Web Application
+### Browse Status-Posting Web Application
 1. Browse the following path `http://localhost:8080`
 
 ### Snapshot of output
